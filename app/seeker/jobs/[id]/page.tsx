@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { MapPin, Clock, DollarSign, FolderOpen, ArrowLeft } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import Card, { CardContent } from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
@@ -137,7 +138,7 @@ export default function JobDetailPage() {
         href="/seeker/jobs"
         className="text-blue-400 hover:text-blue-300 mb-6 inline-flex items-center gap-2 text-sm font-medium"
       >
-        ← Back to Jobs
+        <ArrowLeft className="w-4 h-4" /> Back to Jobs
       </Link>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
@@ -169,19 +170,19 @@ export default function JobDetailPage() {
               {/* Meta */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
                 <div className="flex items-center gap-2 text-slate-300 text-sm">
-                  <span className="text-cyan-400">📍</span>
+                  <MapPin className="w-4 h-4 text-cyan-400" />
                   <span>{job.location}</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-300 text-sm">
-                  <span className="text-cyan-400">⏰</span>
+                  <Clock className="w-4 h-4 text-cyan-400" />
                   <span>{job.job_type}</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-300 text-sm">
-                  <span className="text-cyan-400">💰</span>
+                  <DollarSign className="w-4 h-4 text-cyan-400" />
                   <span>${(job.salary_min / 1000).toFixed(0)}K – ${(job.salary_max / 1000).toFixed(0)}K</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-300 text-sm">
-                  <span className="text-cyan-400">📂</span>
+                  <FolderOpen className="w-4 h-4 text-cyan-400" />
                   <span>{job.category}</span>
                 </div>
               </div>

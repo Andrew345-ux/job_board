@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { MapPin, Clock, DollarSign, Pencil, Trash2, AlertTriangle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
@@ -144,9 +145,9 @@ export default function RecruiterJobs() {
                   <div className="flex-1 min-w-0">
                     <h3 className="text-xl font-semibold text-white mb-1">{job.title}</h3>
                     <div className="flex flex-wrap gap-3 text-slate-400 text-sm">
-                      <span>📍 {job.location}</span>
-                      <span>⏰ {job.job_type}</span>
-                      <span>💰 ${(job.salary_min / 1000).toFixed(0)}k – ${(job.salary_max / 1000).toFixed(0)}k</span>
+                      <span className="inline-flex items-center gap-1"><MapPin className="w-3.5 h-3.5" /> {job.location}</span>
+                      <span className="inline-flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {job.job_type}</span>
+                      <span className="inline-flex items-center gap-1"><DollarSign className="w-3.5 h-3.5" /> ${(job.salary_min / 1000).toFixed(0)}k – ${(job.salary_max / 1000).toFixed(0)}k</span>
                     </div>
                   </div>
                   <Badge variant={job.status === 'active' ? 'active' : 'closed'}>
@@ -171,13 +172,13 @@ export default function RecruiterJobs() {
                     href={`/recruiter/jobs/${job.id}/edit`}
                     className="px-4 py-2 bg-amber-500/20 text-amber-300 rounded-lg text-sm font-medium hover:bg-amber-500/30 transition"
                   >
-                    ✏️ Edit
+                    <Pencil className="w-3.5 h-3.5" /> Edit
                   </Link>
                   <button
                     onClick={() => setDeleteTarget(job)}
                     className="px-4 py-2 bg-red-500/20 text-red-300 rounded-lg text-sm font-medium hover:bg-red-500/30 transition"
                   >
-                    🗑️ Delete
+                    <Trash2 className="w-3.5 h-3.5" /> Delete
                   </button>
                   <button
                     onClick={() => handleToggleStatus(job.id, job.status)}
@@ -209,7 +210,7 @@ export default function RecruiterJobs() {
           <div className="relative bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl animate-fade-in">
             <div className="text-center">
               <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">⚠️</span>
+                <AlertTriangle className="w-8 h-8 text-red-400" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Delete Job Posting?</h3>
               <p className="text-slate-400 mb-1">

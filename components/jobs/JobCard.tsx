@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { MapPin, Clock, DollarSign, Heart } from 'lucide-react';
 import Card, { CardContent, CardFooter } from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
 import type { Job } from '@/lib/types';
@@ -39,16 +40,16 @@ export default function JobCard({ job, role, onSave, isSaved = false }: JobCardP
                 className={`text-xl transition ${isSaved ? 'text-red-400' : 'text-slate-500 hover:text-red-400'}`}
                 aria-label={isSaved ? 'Unsave job' : 'Save job'}
               >
-                {isSaved ? '❤️' : '🤍'}
+                <Heart className="w-5 h-5" fill={isSaved ? 'currentColor' : 'none'} />
               </button>
             )}
           </div>
         </div>
 
         <div className="flex flex-wrap gap-2 mb-3">
-          <Badge variant="default">📍 {job.location}</Badge>
-          <Badge variant="default">⏰ {job.type}</Badge>
-          <Badge variant="default">💰 {salaryDisplay}</Badge>
+          <Badge variant="default"><MapPin className="w-3.5 h-3.5 inline -mt-0.5 mr-1" />{job.location}</Badge>
+          <Badge variant="default"><Clock className="w-3.5 h-3.5 inline -mt-0.5 mr-1" />{job.type}</Badge>
+          <Badge variant="default"><DollarSign className="w-3.5 h-3.5 inline -mt-0.5 mr-1" />{salaryDisplay}</Badge>
         </div>
 
         {job.description && (

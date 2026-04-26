@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { ArrowLeft } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import Button from '@/components/ui/Button';
 import Input, { Textarea, Select } from '@/components/ui/Input';
@@ -70,7 +71,7 @@ export default function CreateJobPage() {
         href="/recruiter/jobs"
         className="text-blue-400 hover:text-blue-300 mb-6 inline-flex items-center gap-2 text-sm font-medium"
       >
-        ← Back to Jobs
+        <ArrowLeft className="w-4 h-4" /> Back to Jobs
       </Link>
 
       <div className="max-w-2xl">

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { DollarSign, CalendarDays } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import Card, { CardContent, CardFooter } from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
@@ -113,11 +114,11 @@ export default function ApplicationsPage() {
                     <div className="flex flex-wrap gap-3 text-sm">
                       {app.jobs?.salary_min && app.jobs?.salary_max && (
                         <span className="text-slate-300">
-                          💰 ${(app.jobs.salary_min / 1000).toFixed(0)}k – ${(app.jobs.salary_max / 1000).toFixed(0)}k
+                          <DollarSign className="w-3.5 h-3.5 inline -mt-0.5" /> ${(app.jobs.salary_min / 1000).toFixed(0)}k – ${(app.jobs.salary_max / 1000).toFixed(0)}k
                         </span>
                       )}
                       <span className="text-slate-300">
-                        📅 Applied {new Date(app.created_at).toLocaleDateString()}
+                        <CalendarDays className="w-3.5 h-3.5 inline -mt-0.5" /> Applied {new Date(app.created_at).toLocaleDateString()}
                       </span>
                     </div>
                   </div>

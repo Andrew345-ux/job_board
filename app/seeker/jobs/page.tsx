@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { MapPin, Clock, DollarSign, Heart } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import Card, { CardContent, CardFooter } from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
@@ -182,10 +183,10 @@ export default function BrowseJobsPage() {
                           {job.users?.full_name || 'Company'}
                         </p>
                         <div className="flex flex-wrap gap-2 mb-3">
-                          <Badge variant="default">📍 {job.location}</Badge>
-                          <Badge variant="default">⏰ {job.job_type}</Badge>
+                          <Badge variant="default"><MapPin className="w-3.5 h-3.5 inline -mt-0.5 mr-1" />{job.location}</Badge>
+                          <Badge variant="default"><Clock className="w-3.5 h-3.5 inline -mt-0.5 mr-1" />{job.job_type}</Badge>
                           <Badge variant="default">
-                            💰 ${(job.salary_min / 1000).toFixed(0)}k – ${(job.salary_max / 1000).toFixed(0)}k
+                            <DollarSign className="w-3.5 h-3.5 inline -mt-0.5 mr-1" />${(job.salary_min / 1000).toFixed(0)}k – ${(job.salary_max / 1000).toFixed(0)}k
                           </Badge>
                         </div>
                       </div>
@@ -196,7 +197,7 @@ export default function BrowseJobsPage() {
                         }`}
                         aria-label={savedJobIds.has(job.id) ? 'Unsave' : 'Save'}
                       >
-                        {savedJobIds.has(job.id) ? '❤️' : '🤍'}
+                        <Heart className="w-6 h-6" fill={savedJobIds.has(job.id) ? 'currentColor' : 'none'} />
                       </button>
                     </div>
 

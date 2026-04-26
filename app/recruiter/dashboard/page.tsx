@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
+import { ClipboardList, Inbox, CheckCircle, ArrowRight } from 'lucide-react';
 import StatsCard from '@/components/jobs/StatsCard';
 import Card, { CardContent, CardFooter } from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
@@ -72,7 +73,7 @@ export default function RecruiterDashboard() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-white">Recruiter Dashboard 👋</h1>
+          <h1 className="text-3xl font-bold text-white">Recruiter Dashboard</h1>
           <p className="text-slate-400 mt-1">Manage your job postings and review applications</p>
         </div>
         <Link href="/recruiter/jobs/create">
@@ -82,9 +83,9 @@ export default function RecruiterDashboard() {
 
       {/* Stats */}
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-        <StatsCard icon="📋" label="Total Jobs" value={stats.jobs} />
-        <StatsCard icon="📬" label="Applications" value={stats.applications} />
-        <StatsCard icon="✅" label="Active Jobs" value={stats.active} />
+        <StatsCard icon={<ClipboardList className="w-5 h-5" />} label="Total Jobs" value={stats.jobs} />
+        <StatsCard icon={<Inbox className="w-5 h-5" />} label="Applications" value={stats.applications} />
+        <StatsCard icon={<CheckCircle className="w-5 h-5" />} label="Active Jobs" value={stats.active} />
       </div>
 
       {/* Recent Jobs */}
@@ -125,7 +126,7 @@ export default function RecruiterDashboard() {
         {recentJobs.length > 0 && (
           <CardFooter>
             <Link href="/recruiter/jobs" className="text-blue-400 hover:text-blue-300 font-medium text-sm">
-              View all jobs →
+              View all jobs <ArrowRight className="w-4 h-4 inline" />
             </Link>
           </CardFooter>
         )}

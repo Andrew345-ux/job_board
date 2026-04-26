@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { MapPin, Clock, DollarSign, Inbox, Eye, CheckCircle, XCircle, RotateCcw, ArrowLeft } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import Card, { CardContent } from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
@@ -100,7 +101,7 @@ export default function RecruiterJobDetailPage() {
         href="/recruiter/jobs"
         className="text-blue-400 hover:text-blue-300 mb-6 inline-flex items-center gap-2 text-sm font-medium"
       >
-        ← Back to My Jobs
+        <ArrowLeft className="w-4 h-4" /> Back to My Jobs
       </Link>
 
       {/* Job Summary */}
@@ -110,9 +111,9 @@ export default function RecruiterJobDetailPage() {
             <div>
               <h1 className="text-2xl font-bold text-white mb-2">{job.title}</h1>
               <div className="flex flex-wrap gap-3 text-slate-400 text-sm">
-                <span>📍 {job.location}</span>
-                <span>⏰ {job.job_type}</span>
-                <span>💰 ${(job.salary_min / 1000).toFixed(0)}k – ${(job.salary_max / 1000).toFixed(0)}k</span>
+                <span className="inline-flex items-center gap-1"><MapPin className="w-3.5 h-3.5" /> {job.location}</span>
+                <span className="inline-flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {job.job_type}</span>
+                <span className="inline-flex items-center gap-1"><DollarSign className="w-3.5 h-3.5" /> ${(job.salary_min / 1000).toFixed(0)}k – ${(job.salary_max / 1000).toFixed(0)}k</span>
               </div>
             </div>
             <Badge variant={job.status === 'active' ? 'active' : 'closed'}>
@@ -131,7 +132,7 @@ export default function RecruiterJobDetailPage() {
         <Card>
           <CardContent>
             <div className="text-center py-8">
-              <p className="text-4xl mb-4">📭</p>
+              <Inbox className="w-12 h-12 text-slate-500 mx-auto mb-4" />
               <p className="text-slate-400">No applications received yet</p>
             </div>
           </CardContent>
@@ -189,20 +190,20 @@ export default function RecruiterJobDetailPage() {
                             variant="outline"
                             onClick={() => handleUpdateStatus(app.id, 'reviewed')}
                           >
-                            👀 Review
+                            <Eye className="w-4 h-4" /> Review
                           </Button>
                           <Button
                             size="sm"
                             onClick={() => handleUpdateStatus(app.id, 'accepted')}
                           >
-                            ✅ Accept
+                            <CheckCircle className="w-4 h-4" /> Accept
                           </Button>
                           <Button
                             size="sm"
                             variant="danger"
                             onClick={() => handleUpdateStatus(app.id, 'rejected')}
                           >
-                            ❌ Reject
+                            <XCircle className="w-4 h-4" /> Reject
                           </Button>
                         </>
                       )}
@@ -213,14 +214,14 @@ export default function RecruiterJobDetailPage() {
                             size="sm"
                             onClick={() => handleUpdateStatus(app.id, 'accepted')}
                           >
-                            ✅ Accept
+                            <CheckCircle className="w-4 h-4" /> Accept
                           </Button>
                           <Button
                             size="sm"
                             variant="danger"
                             onClick={() => handleUpdateStatus(app.id, 'rejected')}
                           >
-                            ❌ Reject
+                            <XCircle className="w-4 h-4" /> Reject
                           </Button>
                         </>
                       )}
@@ -231,7 +232,7 @@ export default function RecruiterJobDetailPage() {
                           variant="secondary"
                           onClick={() => handleUpdateStatus(app.id, 'pending')}
                         >
-                          ↩️ Reset
+                          <RotateCcw className="w-4 h-4" /> Reset
                         </Button>
                       )}
                     </div>

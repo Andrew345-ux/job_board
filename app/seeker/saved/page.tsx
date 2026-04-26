@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { MapPin, Clock, DollarSign, Heart, HeartOff } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import Card, { CardContent, CardFooter } from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
@@ -58,7 +59,7 @@ export default function SavedJobsPage() {
   return (
     <div className="animate-fade-in">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-white mb-2">Saved Jobs ❤️</h1>
+        <h1 className="text-3xl font-bold text-white mb-2 inline-flex items-center gap-3">Saved Jobs <Heart className="w-7 h-7 text-red-400" fill="currentColor" /></h1>
         <p className="text-slate-400">Jobs you&apos;ve bookmarked for later</p>
       </div>
 
@@ -66,7 +67,7 @@ export default function SavedJobsPage() {
         <Card>
           <CardContent>
             <div className="text-center py-12">
-              <p className="text-4xl mb-4">🤍</p>
+              <Heart className="w-12 h-12 text-slate-500 mx-auto mb-4" />
               <p className="text-slate-400 text-lg mb-4">No saved jobs yet</p>
               <p className="text-slate-500 text-sm mb-6">
                 Browse jobs and click the heart icon to save them here
@@ -95,10 +96,10 @@ export default function SavedJobsPage() {
                       {job.users?.full_name || 'Company'}
                     </p>
                     <div className="flex flex-wrap gap-2 mb-3">
-                      <Badge variant="default">📍 {job.location}</Badge>
-                      <Badge variant="default">⏰ {job.job_type}</Badge>
+                      <Badge variant="default"><MapPin className="w-3.5 h-3.5 inline -mt-0.5 mr-1" />{job.location}</Badge>
+                      <Badge variant="default"><Clock className="w-3.5 h-3.5 inline -mt-0.5 mr-1" />{job.job_type}</Badge>
                       <Badge variant="default">
-                        💰 ${(job.salary_min / 1000).toFixed(0)}k – ${(job.salary_max / 1000).toFixed(0)}k
+                        <DollarSign className="w-3.5 h-3.5 inline -mt-0.5 mr-1" />${(job.salary_min / 1000).toFixed(0)}k – ${(job.salary_max / 1000).toFixed(0)}k
                       </Badge>
                     </div>
                     {job.description && (
@@ -120,7 +121,7 @@ export default function SavedJobsPage() {
                   onClick={() => handleUnsave(job.saved_id)}
                   className="px-4 py-2 rounded-lg text-sm font-medium bg-red-500/20 text-red-300 hover:bg-red-500/30 transition"
                 >
-                  ❤️ Remove from Saved
+                  <HeartOff className="w-4 h-4 inline -mt-0.5 mr-1" /> Remove from Saved
                 </button>
               </CardFooter>
             </Card>
