@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { Search, Building2, Target, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'JobBoard – Find Your Next Opportunity',
@@ -71,13 +72,13 @@ export default function Home() {
               href="/auth/signup?role=seeker"
               className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 transform hover:scale-105"
             >
-              🔍 I&apos;m Looking for Jobs
+              <Search className="inline-block w-5 h-5 mr-2 -mt-0.5" /> I&apos;m Looking for Jobs
             </Link>
             <Link
               href="/auth/signup?role=recruiter"
               className="px-8 py-4 bg-slate-700 text-white font-semibold rounded-xl hover:bg-slate-600 transition-all duration-300 border border-slate-600 transform hover:scale-105"
             >
-              🏢 I&apos;m Hiring
+              <Building2 className="inline-block w-5 h-5 mr-2 -mt-0.5" /> I&apos;m Hiring
             </Link>
           </div>
 
@@ -85,17 +86,17 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6 mt-20 animate-fade-in-up-delay-3">
             {[
               {
-                icon: '🎯',
+                icon: <Target className="w-8 h-8 text-blue-400" />,
                 title: 'For Job Seekers',
                 desc: 'Browse jobs, apply instantly, and track your applications in real time',
               },
               {
-                icon: '🏢',
+                icon: <Building2 className="w-8 h-8 text-cyan-400" />,
                 title: 'For Recruiters',
                 desc: 'Post jobs, review applications, and find the perfect candidates for your team',
               },
               {
-                icon: '⚡',
+                icon: <Zap className="w-8 h-8 text-yellow-400" />,
                 title: 'Lightning Fast',
                 desc: 'Built with Next.js & Supabase for the best performance and real‑time updates',
               },

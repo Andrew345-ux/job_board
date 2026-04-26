@@ -26,7 +26,7 @@
 
 ### Landing Page
 
-![Landing Page](./screenshots/landing-page.png)
+![Landing Page](./screenshots/landingPage.png)
 
 ### Authentication
 
@@ -36,7 +36,7 @@
 
 ### Recruiter Dashboard
 
-![Recruiter Dashboard](./screenshots/recruiter-dashboard.png)
+![Recruiter Dashboard](./screenshots/recruterDashBoard.png)
 
 ### Recruiter — Job Postings
 
