@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./screenshots/login.png" alt="JobBoard Logo" width="80" height="80" />
+  <img src="./screenshots/logo.png" alt="JobBoard Logo" width="80" height="80" />
 </p>
 
 <h1 align="center">JobBoard</h1>
