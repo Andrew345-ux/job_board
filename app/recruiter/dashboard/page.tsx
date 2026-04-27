@@ -9,7 +9,6 @@ import Card, { CardContent, CardFooter } from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import type { Job } from '@/lib/types';
-import type { Metadata } from 'next';
 
 export default function RecruiterDashboard() {
   const [stats, setStats] = useState({ jobs: 0, applications: 0, active: 0 });

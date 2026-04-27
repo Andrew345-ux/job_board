@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
@@ -36,9 +36,11 @@ export default function Navbar({ role, userName }: NavbarProps) {
 
   const links = role === 'recruiter' ? recruiterLinks : seekerLinks;
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
+  const prevPathname = React.useRef(pathname);
+  if (prevPathname.current !== pathname) {
+    prevPathname.current = pathname;
+    if (mobileOpen) setMobileOpen(false);
+  }
 
   const handleLogout = async () => {
     setLoggingOut(true);
