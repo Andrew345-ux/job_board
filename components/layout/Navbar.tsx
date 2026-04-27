@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
@@ -36,11 +36,10 @@ export default function Navbar({ role, userName }: NavbarProps) {
 
   const links = role === 'recruiter' ? recruiterLinks : seekerLinks;
 
-  const prevPathname = React.useRef(pathname);
-  if (prevPathname.current !== pathname) {
-    prevPathname.current = pathname;
-    if (mobileOpen) setMobileOpen(false);
-  }
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   const handleLogout = async () => {
     setLoggingOut(true);
