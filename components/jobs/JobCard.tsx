@@ -48,7 +48,7 @@ export default function JobCard({ job, role, onSave, isSaved = false }: JobCardP
 
         <div className="flex flex-wrap gap-2 mb-3">
           <Badge variant="default"><MapPin className="w-3.5 h-3.5 inline -mt-0.5 mr-1" />{job.location}</Badge>
-          <Badge variant="default"><Clock className="w-3.5 h-3.5 inline -mt-0.5 mr-1" />{job.type}</Badge>
+          <Badge variant="default"><Clock className="w-3.5 h-3.5 inline -mt-0.5 mr-1" />{job.job_type}</Badge>
           <Badge variant="default"><DollarSign className="w-3.5 h-3.5 inline -mt-0.5 mr-1" />{salaryDisplay}</Badge>
         </div>
 
