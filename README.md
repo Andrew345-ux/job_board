@@ -20,7 +20,7 @@
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 > Replace the placeholder paths below with your actual screenshot paths.
 
@@ -66,16 +66,16 @@
 
 ---
 
-## ✨ Features
+##  Features
 
-### 🔐 Authentication
+###  Authentication
 
 - Email & password sign-up and login via **Supabase Auth**
 - Role selection during sign-up (**Recruiter** or **Seeker**)
 - Automatic role-based routing after login
 - Protected routes with layout-level auth guards
 
-### 👔 Recruiter Features
+###  Recruiter Features
 
 | Feature | Description |
 |---------|-------------|
@@ -86,7 +86,7 @@
 | **Toggle Status** | Open/close job postings instantly |
 | **Review Applications** | View all applicants with their cover letters, and update status (Review → Accept / Reject → Reset) |
 
-### 🔍 Job Seeker Features
+###  Job Seeker Features
 
 | Feature | Description |
 |---------|-------------|
@@ -98,7 +98,7 @@
 | **Track Applications** | Monitor application status (Pending → Reviewed → Accepted/Rejected) with filter tabs |
 | **Withdraw** | Withdraw pending applications |
 
-### 🎨 UI / UX
+###  UI / UX
 
 - Fully responsive design (mobile, tablet, desktop)
 - Dark theme with glassmorphism effects
@@ -109,7 +109,7 @@
 
 ---
 
-## 🏗️ Tech Stack
+##  Tech Stack
 
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
@@ -123,7 +123,7 @@
 
 ---
 
-## 🗄️ Database Architecture
+##  Database Architecture
 
 The app uses **Supabase** (hosted PostgreSQL) with 4 tables and Row Level Security (RLS) policies.
 
@@ -191,7 +191,7 @@ erDiagram
 
 ---
 
-## 🔗 How Supabase Is Connected
+##  How Supabase Is Connected
 
 ### 1. Client Initialization
 
@@ -247,7 +247,7 @@ const { data } = await supabase
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 job_board/
@@ -303,7 +303,7 @@ job_board/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -372,12 +372,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 📄 License
+##  License
 
 This project is for educational and portfolio purposes.
 
 ---
 
 <p align="center">
-  Built with ❤️ using <strong>Next.js</strong>, <strong>Tailwind CSS</strong>, and <strong>Supabase</strong>
+  Built using <strong>Next.js</strong>, <strong>Tailwind CSS</strong>, and <strong>Supabase</strong>
 </p>

@@ -74,7 +74,7 @@ export default function CreateJobPage() {
         <ArrowLeft className="w-4 h-4" /> Back to Jobs
       </Link>
 
-      <div className="max-w-2xl">
+      <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold text-white mb-2">Post a New Job</h1>
         <p className="text-slate-400 mb-8">Fill out the details below to create a new job posting</p>
 

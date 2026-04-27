@@ -111,7 +111,7 @@ export default function EditJobPage() {
 
   if (fetching) {
     return (
-      <div className="space-y-4 animate-pulse max-w-2xl">
+      <div className="space-y-4 animate-pulse max-w-2xl mx-auto">
         <div className="h-6 bg-slate-800 rounded w-1/4" />
         <div className="h-10 bg-slate-800 rounded w-2/3" />
         <div className="h-[600px] bg-slate-800 rounded-xl" />
@@ -139,7 +139,7 @@ export default function EditJobPage() {
         <ArrowLeft className="w-4 h-4" /> Back to Jobs
       </Link>
 
-      <div className="max-w-2xl">
+      <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold text-white mb-2">Edit Job</h1>
         <p className="text-slate-400 mb-8">Update the details of your job posting</p>
 
