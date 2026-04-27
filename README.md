@@ -42,27 +42,27 @@
 
 | My Jobs | Create Job | Edit Job |
 |---------|------------|----------|
-| ![My Jobs](./screenshots/recruiter-jobs.png) | ![Create Job](./screenshots/create-job.png) | ![Edit Job](./screenshots/edit-job.png) |
+| ![My Jobs](./screenshots/myJobs.png) | ![Create Job](./screenshots/CreateJob.png) | ![Edit Job](./screenshots/editJob.png) |
 
 ### Recruiter — Applications Management
 
-![Applications Management](./screenshots/recruiter-applications.png)
+![Applications Management](./screenshots/ApplicationManagement.png)
 
 ### Seeker Dashboard
 
-![Seeker Dashboard](./screenshots/seeker-dashboard.png)
+![Seeker Dashboard](./screenshots/JobSeekerDashBoard.png)
 
 ### Seeker — Browse & Job Detail
 
 | Browse Jobs | Job Detail |
 |-------------|------------|
-| ![Browse Jobs](./screenshots/browse-jobs.png) | ![Job Detail](./screenshots/job-detail.png) |
+| ![Browse Jobs](./screenshots/BrowseJob.png) | ![Job Detail](./screenshots/jobDetails.png) |
 
 ### Seeker — Applications & Saved Jobs
 
 | My Applications | Saved Jobs |
 |-----------------|------------|
-| ![My Applications](./screenshots/seeker-applications.png) | ![Saved Jobs](./screenshots/saved-jobs.png) |
+| ![My Applications](./screenshots/MyApplicationSeeker.png) | ![Saved Jobs](./screenshots/SavedJobs.png) |
 
 ---
 
