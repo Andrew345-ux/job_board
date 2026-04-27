@@ -36,7 +36,6 @@ export default function Navbar({ role, userName }: NavbarProps) {
 
   const links = role === 'recruiter' ? recruiterLinks : seekerLinks;
 
-  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
